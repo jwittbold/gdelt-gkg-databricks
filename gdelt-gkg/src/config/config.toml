@@ -1,0 +1,70 @@
+# configure GDELT GKG Pipeline
+# Only configurable options are AZURE, SCRAPER, and BATCH params
+
+
+[FS]
+# for Databricks file system 
+DBFS_MNT = 'dbfs:/mnt'
+# for use with cloudpathlib library. Format is: 'az://<container_name>/<folder>/<file>
+CLOUD_PATH = 'az://'
+
+
+# ADLS Gen 2 Storage
+# Using ADLS Gen 2, 'file system' = 'container name'
+# abfs[s]://<file_system>@<storage_account_name>.dfs.core.windows.net/<folder>/<file>
+[AZURE]
+PREFIX = 'abfss://'
+CONTAINER = 'gdeltdata'
+STORAGE_ACC = 'gdeltstorage'
+SUFFIX = '.dfs.core.windows.net'
+
+
+[ORCHESTRATE]
+# DAG params
+CRON_INTERVAL = '*/12 * * * *'
+
+
+[SCRAPER]
+# Enter date as YEAR-MONTH-DAY format, e.g., 2021-09-01
+# START_DATE corresponds to the date from which you would like to download GDELT GKG records.
+# END_DATE by default is set to 'now' to download all available records. 
+# END_DATE can be set to any date later than START_DATE in order to download a limited range of dates, format, e.g., 2021-09-02
+# END_DATE will return files for END_DATE - 15 minutes, not inclusive, so if END_DATE = 2021-09-02, it will download all GKG FILE up 2021-09-01 23:45:00
+# FROM_LAST if set to 'true' will use the last GKG record timestamp as start date. If 'false' it will use START_DATE
+# START_DATE = '2021-10-21'
+START_DATE = '2022-02-15'
+END_DATE = 'now'
+FROM_LAST = true
+DOWNLOAD_METRICS = '/gdelt/download_metrics'
+
+
+[BATCH]
+# PERIOD set to 'daily', 'hourly', or '15min' to control how GKG files are written out.
+# NOTE This only controls file sizes. Pipeline run frequency is controlled via Airflow DAG.
+# 'daily' -- will repartion to create (5) parquet files ~ 120MB each. Avoids small file problem.
+# 'hourly' -- will coalesce to create (1) parquet file for each batch run. Smaller files.
+# '15min' -- will coalesce to create (1) parquet file for each batch run. Smaller files.
+PERIOD = 'daily'
+
+
+[ETL]
+# DOWNLOAD_PATH is where GKG files are downloaded to. 
+# PIPELINE METRICS TEMP holds temp records. Used to join with pipeline metrics final records.
+# Temp records deleted once pipeline metrics final records are created.
+# PIPE METRICS TEMP holds the records for metrics created on the pipeline. 
+# TRANSFORMED_OUT is where transformed GKG Parquet files will be written out to.
+  [ETL.PATHS]
+    DOWNLOAD_PATH = '/gdelt/raw_gkg'
+    EXTRACT_PATH = '/gdelt/extract_gkg'
+    PIPELINE_METRICS_TEMP = '/gdelt/pipeline_metrics_temp'
+    PIPELINE_METRICS_FINAL = '/gdelt/pipeline_metrics_final'
+    TRANSFORMED_OUT = '/gdelt/transformed_gkg'
+
+
+[FEEDS]
+# GDELT Global Knowledge Graph English and translingual datasets -- the four URLs below
+# https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/ -- an intro to The GDELT Project
+MASTER = ['http://data.gdeltproject.org/gdeltv2/masterfilelist.txt',
+        'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt']
+LAST_UPDATE = ['http://data.gdeltproject.org/gdeltv2/lastupdate.txt',
+              'http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt']
