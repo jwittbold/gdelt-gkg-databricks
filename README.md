@@ -160,7 +160,16 @@ root
 ## One randonly selected row in a raw GKG file broken down to its 27 native columns. 
 Highlighting the denormalized structure of the data. Before transformation each CSV file contains 27 columns, many of which contain further nested data elements which are delimited differently depending on the column.
 
+<details>
+<summary>
 
+```
+ Expand to view raw. Scroll right to view further...
+```
+
+</summary>
+
+ ```
 20211021000000-0  
 
 20211021000000  
@@ -205,3 +214,6 @@ Sherrod Brown,78;Child Suicide Prevention,132;Lethal Means Safety,156;Democratic
 4,leading cause of death,1602;		
 
 <PAGE_AUTHORS>Lucas Bechtol lbechtol@bryantimes.com;ltbechtol</PAGE_AUTHORS><PAGE_PRECISEPUBTIMESTAMP>20211020231500</PAGE_PRECISEPUBTIMESTAMP><PAGE_TITLE>Brown supporting child suicide prevention bill</PAGE_TITLE>
+ 
+```
+</details>
