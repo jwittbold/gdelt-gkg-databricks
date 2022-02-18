@@ -1,4 +1,5 @@
-# GDELT GKG on Azure Data Lake Gen 2 Storage and Databricks Connect
+# GDELT Global Knowlegde Graph  
+## Running on Azure Data Lake Gen 2 Storage and Databricks Connect
 
 ***Global Database of Events, Language, and Tone -- Global Knowledge Graph***
 
