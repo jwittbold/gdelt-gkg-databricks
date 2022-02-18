@@ -1,10 +1,15 @@
-# GDELT Global Knowlegde Graph  
-## Running on Azure Data Lake Gen 2 Storage and Databricks Connect
-
-***Global Database of Events, Language, and Tone -- Global Knowledge Graph***
+# GDELT Global Knowlegde Graph Pipeline
+***Global Database of Events, Language, and Tone***
 
 
+## Running on Databricks cluster and Azure ADLS Gen 2 Storage via Databricks Connect
 
+
+### Deployment Architecture
+![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
+
+
+### Azure Dashboard
 ![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
 
 
