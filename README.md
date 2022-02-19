@@ -17,7 +17,7 @@
 * [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
 * [Create Service Principal](#create-service-principal)
 * [Set Permissions](#set-permissions)
-* [Environment_Variables](#environment-variables)
+* [Environment Variables](#environment-variables)
 * [Deploy to Cluster](#deploy-to-cluster)
 * [Pipeline Execution](#pipeline-execution)
 * [Monitoring Pipeline](#azure-dashboard)
