@@ -3,22 +3,24 @@
 
 
 ## Running on Databricks cluster and Azure ADLS Gen 2 Storage via Databricks Connect
+[create an anchor](#anchors-in-markdown)
 
-* [Understanding GDELT GKG]('#understanding-gdelt-gkg')
-* [GKG Data Model]('#gkg-data-model')
-* [Pipeline Deployment Architecture Model]('#pipeline-deployment-architecture-model')
-* [Ingesting GKG Files]('#ingesting-gkg-files')
-* [GKG Schema]('#GKG-Schema')
-* [Transforming GKG Files]('#transforming-gkg-files')
-* [Setting Up Databricks Cluster]('#setting-up-databricks-cluster')
-* [Setting Up Databricks Connect]('#setting-up-databricks-connect')
-* [Setting Up Azure ADLS Gen2 Storage]('#setting-up-azure-adls-gen2-storage')
-* [Create Service Principal]('#create-service-principal')
-* [Set Permissions]('#set-permissions')
-* [Environment_Variables]('#environment-variables')
-* [Deploy to Cluster]('#deploy-to-cluster')
-* [Pipeline Exection]('#pipeline-execution')
-* [Monitoring Pipeline]('monitoring-pipeline')
+
+* [Understanding GDELT GKG](#understanding-gdelt-gkg)
+* [GKG Data Model](#gkg-data-model)
+* [Pipeline Deployment Architecture Model](#pipeline-deployment-architecture-model)
+* [Ingesting GKG Files](#ingesting-gkg-files)
+* [GKG Schema](#gkg-schema)
+* [Transforming GKG Files](#transforming-gkg-files)
+* [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
+* [Setting Up Databricks Connect](#setting-up-databricks-connect)
+* [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
+* [Create Service Principal](#create-service-principal)
+* [Set Permissions](#set-permissions)
+* [Environment_Variables](#environment-variables)
+* [Deploy to Cluster](#deploy-to-cluster)
+* [Pipeline Exection](#pipeline-execution)
+* [Monitoring Pipeline](#monitoring-pipeline)
 
 
 ### Pipeline Deployment Architecture Model
