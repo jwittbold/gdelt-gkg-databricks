@@ -20,7 +20,7 @@
 * [Environment_Variables](#environment-variables)
 * [Deploy to Cluster](#deploy-to-cluster)
 * [Pipeline Exection](#pipeline-execution)
-* [Monitoring Pipeline](#monitoring-pipeline)
+* [Monitoring Pipeline](#azure-dashboard)
 
 
 ### Pipeline Deployment Architecture Model
