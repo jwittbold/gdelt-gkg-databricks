@@ -8,7 +8,7 @@
 * [GKG Data Model]('#gkg-data-model')
 * [Pipeline Deployment Architecture Model]('#pipeline-deployment-architecture-model')
 * [Ingesting GKG Files]('#ingesting-gkg-files')
-* [GKG Schema]('#gkg-schema')
+* [GKG Schema]('#GKG-Schema')
 * [Transforming GKG Files]('#transforming-gkg-files')
 * [Setting Up Databricks Cluster]('#setting-up-databricks-cluster')
 * [Setting Up Databricks Connect]('#setting-up-databricks-connect')
