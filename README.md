@@ -2,8 +2,8 @@
 ***Global Database of Events, Language, and Tone***
 
 
-## Running on Databricks cluster and Azure ADLS Gen 2 Storage via Databricks Connect
-[create an anchor](#anchors-in-markdown)
+## Running on Databricks and Azure ADLS Gen 2 Storage via Databricks Connect
+
 
 
 * [Understanding GDELT GKG](#understanding-gdelt-gkg)
@@ -19,8 +19,26 @@
 * [Set Permissions](#set-permissions)
 * [Environment_Variables](#environment-variables)
 * [Deploy to Cluster](#deploy-to-cluster)
-* [Pipeline Exection](#pipeline-execution)
+* [Pipeline Execution](#pipeline-execution)
 * [Monitoring Pipeline](#azure-dashboard)
+
+
+### Understanding GDELT GKG
+
+https://www.gdeltproject.org  
+https://www.gdeltproject.org/data.html  
+https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/  
+https://blog.gdeltproject.org/introducing-the-global-content-analysis-measures-gcam/  
+http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf  
+
+Master GKG File List  
+'http://data.gdeltproject.org/gdeltv2/masterfilelist.txt'  
+'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt'  
+        
+Latest GKG Files  
+'http://data.gdeltproject.org/gdeltv2/lastupdate.txt'  
+'http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt'  
+
 
 
 ### Pipeline Deployment Architecture Model
