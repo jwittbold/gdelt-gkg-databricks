@@ -6,7 +6,7 @@
 
 * [Understanding GDELT GKG]('#understand_gdelt')
 * [GKG Data Model]('#gkg_model')
-* [Pipeline Architecture Deployment Model]('#deployment_architecture')
+* [Pipeline Deployment Architecture Model]('#deployment')
 * [Ingesting GKG Files]('#ingest_gkg')
 * [GKG Schema]('#gkg_schema')
 * [Transforming GKG Files]('#transform_gkg')
