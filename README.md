@@ -35,7 +35,7 @@ Master GKG File List
 'http://data.gdeltproject.org/gdeltv2/masterfilelist.txt'  
 'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt'  
         
-Latest GKG Files  
+Latest GKG File List  
 'http://data.gdeltproject.org/gdeltv2/lastupdate.txt'  
 'http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt'  
 
