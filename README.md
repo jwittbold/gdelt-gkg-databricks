@@ -4,6 +4,22 @@
 
 ## Running on Databricks cluster and Azure ADLS Gen 2 Storage via Databricks Connect
 
+* [Understanding GDELT GKG]('#understand_gdelt')
+* [GKG Data Model]('#gkg_model')
+* [Pipeline Architecture Deployment Model]('#deployment_architecture')
+* [Ingesting GKG Files]('#ingest_gkg')
+* [GKG Schema]('#gkg_schema')
+* [Transforming GKG Files]('#transform_gkg')
+* [Setting Up Databricks Cluster]('#create_cluster')
+* [Setting Up Databricks Connect]('#databricks_connect')
+* [Setting Up Azure ADLS Gen2 Storage]('#adls_gen2')
+* [Create Service Principal]('#service_principal')
+* [Set Permissions]('#permissions')
+* [Environment_Variables]('#env_variables')
+* [Deploy to Cluster]('#deploy_cluster')
+* [Pipeline Exection]('#execute_pipeline')
+* [Monitoring Pipeline]('#monitor_pipeline')
+
 
 ### Deployment Architecture
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
