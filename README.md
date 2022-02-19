@@ -8,7 +8,7 @@
 
 * [Understanding GDELT GKG](#understanding-gdelt-gkg)
 * [GKG Data Model](#gkg-data-model)
-* [Pipeline Deployment Architecture Model](#pipeline-deployment-architecture-model)
+* [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
 * [Ingesting GKG Files](#ingesting-gkg-files)
 * [GKG Schema](#gkg-schema)
 * [Transforming GKG Files](#transforming-gkg-files)
@@ -53,7 +53,7 @@ http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt
 
 
 
-### Pipeline Deployment Architecture Model
+### Pipeline Deployment Architecture
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
 
 
