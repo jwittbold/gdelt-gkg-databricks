@@ -18,7 +18,7 @@
 * [Environment_Variables]('#env_variables')
 * [Deploy to Cluster]('#deploy_cluster')
 * [Pipeline Exection]('#execute_pipeline')
-* [Monitoring Pipeline]('#monitor_pipeline')
+* [Monitoring Pipeline]('#azure_dashboard')
 
 
 ### Deployment Architecture
