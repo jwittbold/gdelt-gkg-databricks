@@ -25,11 +25,23 @@
 
 ### Understanding GDELT GKG
 
+High level overview of the GDELT Project   
 https://www.gdeltproject.org  
+
+GDELT Datasets  
 https://www.gdeltproject.org/data.html  
+
+GDELT 2.0 GKG  
 https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/  
+
+GCAM - Global Content Analysis Measures (a GKG Column)  
 https://blog.gdeltproject.org/introducing-the-global-content-analysis-measures-gcam/  
+
+GDELT 2.0 GKG Documention - Essential for understanding GDELT GKG 2.0 records  
 http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf  
+
+
+**GKG 2.0 File Sources**  
 
 Master GKG File List  
 http://data.gdeltproject.org/gdeltv2/masterfilelist.txt  
