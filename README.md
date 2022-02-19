@@ -16,6 +16,7 @@
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
 * [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
 * [Create Service Principal](#create-service-principal)
+* [Authentication](#authentication)
 * [Set Permissions](#set-permissions)
 * [Environment Variables](#environment-variables)
 * [Deploy to Cluster](#deploy-to-cluster)
