@@ -21,7 +21,7 @@
 * [Monitoring Pipeline]('monitoring')
 
 
-### Deployment Architecture
+### Pipeline Deployment Architecture Model
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
 
 
@@ -29,7 +29,7 @@
 ![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
 
 
-## GDELT GKG Schema
+## GKG Schema
 ```
 root
  |-- GkgRecordId: struct (nullable = true)
