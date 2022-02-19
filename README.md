@@ -22,7 +22,9 @@
 * [Deploy to Cluster](#deploy-to-cluster)
 * [Pipeline Execution](#pipeline-execution)
 * [Monitoring Pipeline](#azure-dashboard)
-
+* [Querying Transformed Data](#querying-transformed-data)
+* [Potential Use Cases and Applications](#potential-use-cases-and-applications)
+* [GDELT GKG Local Pipeline](#gdelt-gkg-local-pipeline)
 
 ### Understanding GDELT GKG
 
