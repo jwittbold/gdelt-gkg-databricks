@@ -4,21 +4,21 @@
 
 ## Running on Databricks cluster and Azure ADLS Gen 2 Storage via Databricks Connect
 
-* [Understanding GDELT GKG]('#understand_gdelt')
-* [GKG Data Model]('#gkg_model')
+* [Understanding GDELT GKG]('#understanding')
+* [GKG Data Model]('#gkg')
 * [Pipeline Deployment Architecture Model]('#deployment')
-* [Ingesting GKG Files]('#ingest_gkg')
-* [GKG Schema]('#gkg_schema')
-* [Transforming GKG Files]('#transform_gkg')
-* [Setting Up Databricks Cluster]('#create_cluster')
-* [Setting Up Databricks Connect]('#databricks_connect')
-* [Setting Up Azure ADLS Gen2 Storage]('#adls_gen2')
-* [Create Service Principal]('#service_principal')
+* [Ingesting GKG Files]('#ingest')
+* [GKG Schema]('#schema')
+* [Transforming GKG Files]('#transform')
+* [Setting Up Databricks Cluster]('#cluster')
+* [Setting Up Databricks Connect]('#connect')
+* [Setting Up Azure ADLS Gen2 Storage]('#adls')
+* [Create Service Principal]('#service')
 * [Set Permissions]('#permissions')
-* [Environment_Variables]('#env_variables')
-* [Deploy to Cluster]('#deploy_cluster')
-* [Pipeline Exection]('#execute_pipeline')
-* [Monitoring Pipeline]('#azure_dashboard')
+* [Environment_Variables]('#environment')
+* [Deploy to Cluster]('#deploy')
+* [Pipeline Exection]('#execution')
+* [Monitoring Pipeline]('monitoring')
 
 
 ### Deployment Architecture
