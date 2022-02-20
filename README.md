@@ -39,7 +39,7 @@
 - High level overview of the GDELT Project   
         https://www.gdeltproject.org  
 
-- GDELT 2.0 GKG Dataset 
+- GDELT 2.0 GKG Dataset  
         https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/  
 
 - **GDELT 2.0 GKG Documention - Essential for understanding GDELT GKG 2.0 records**  
@@ -213,12 +213,11 @@ Secret Scopes
 https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
 
 **Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
-Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
-* The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.
+- Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
+> The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.  
 
-If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
-
-https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/
+- If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
+        https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/ 
 
 
 
