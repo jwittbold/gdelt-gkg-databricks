@@ -1,24 +1,24 @@
 # GDELT Global Knowlegde Graph Pipeline
 ***Global Database of Events, Language, and Tone***
 
+![language](https://img.shields.io/badge/language-python-blue.svg) ![language](https://img.shields.io/badge/language-bash-green.svg)
 
 ## Running on Databricks and Azure ADLS Gen 2 Storage via Databricks Connect
 
-
-
-* [Understanding GDELT GKG](#understanding-gdelt-gkg)
-* [GKG Data Model](#gkg-data-model)
+## Table of Contents
 * [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
-* [Ingesting GKG Files](#ingesting-gkg-files)
+* [Understanding GDELT GKG](#understanding-gdelt-gkg)
 * [GKG Schema](#gkg-schema)
-* [Transforming GKG Files](#transforming-gkg-files)
+* [GKG Data Model](#gkg-data-model)
+
 
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
 * [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
-
-
-
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
+
+* [Ingesting GKG Files](#ingesting-gkg-files)
+
+* [Transforming GKG Files](#transforming-gkg-files)
 
 
 * [Environment Variables](#environment-variables)
@@ -29,69 +29,35 @@
 * [Potential Use Cases and Applications](#potential-use-cases-and-applications)
 * [GDELT GKG Local Pipeline](#gdelt-gkg-local-pipeline)
 
-### Understanding GDELT GKG
-
-High level overview of the GDELT Project   
-https://www.gdeltproject.org  
-
-GDELT Datasets  
-https://www.gdeltproject.org/data.html  
-
-GDELT 2.0 GKG  
-https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/  
-
-GCAM - Global Content Analysis Measures (a GKG Column)  
-https://blog.gdeltproject.org/introducing-the-global-content-analysis-measures-gcam/  
-
-GDELT 2.0 GKG Documention - Essential for understanding GDELT GKG 2.0 records  
-http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf  
-
-
-**GKG 2.0 File Sources**  
-
-Master GKG File List  
-http://data.gdeltproject.org/gdeltv2/masterfilelist.txt  
-http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt  
-        
-Latest GKG File List  
-http://data.gdeltproject.org/gdeltv2/lastupdate.txt  
-http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt  
-
-
 
 ### Pipeline Deployment Architecture
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
 
 
-### Access ADLS Gen2 Using OAuth 2 as Service Principal
+## Understanding GDELT GKG
 
-https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
+- High level overview of the GDELT Project   
+        https://www.gdeltproject.org  
 
+- GDELT 2.0 GKG Dataset 
+        https://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/  
 
-Secret Scopes  
-https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
+- **GDELT 2.0 GKG Documention - Essential for understanding GDELT GKG 2.0 records**  
+        http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf 
 
-**Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
-Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
-* The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.
-
-If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
-
-https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/
+- GCAM - Global Content Analysis Measures (a GKG Column)  
+        https://blog.gdeltproject.org/introducing-the-global-content-analysis-measures-gcam/  
 
 
+**GKG 2.0 File Sources**  
 
-
-
-
-
-
-
-
-
-
-### Azure Dashboard
-![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
+- Master GKG File List  
+        http://data.gdeltproject.org/gdeltv2/masterfilelist.txt  
+        http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt  
+        
+- Latest GKG File List  
+        http://data.gdeltproject.org/gdeltv2/lastupdate.txt  
+        http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt  
 
 
 ## GKG Schema
@@ -231,6 +197,45 @@ root
  |    |-- AltUrlAmp: string (nullable = true)
  |    |-- PubTimestamp: timestamp (nullable = true)
  ```
+
+
+## GKG Data Model
+![gkg_data_model](/erd/GKG_ERD.svg)
+
+
+
+
+
+## Development Set-up :hammer_and_wrench:
+
+### Access ADLS Gen2 Using OAuth 2 as Service Principal
+
+https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
+
+
+Secret Scopes  
+https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
+
+**Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
+Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
+* The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.
+
+If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
+
+https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/
+
+
+
+
+
+
+
+
+### Azure Dashboard
+![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
+
+
+
 
 ## GDELT GKG Columns
 ```
