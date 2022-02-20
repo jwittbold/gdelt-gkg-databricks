@@ -12,12 +12,12 @@
 * [Ingesting GKG Files](#ingesting-gkg-files)
 * [GKG Schema](#gkg-schema)
 * [Transforming GKG Files](#transforming-gkg-files)
+
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
+* [Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal](#access-azure-data-lake-storage-gen2-using-OAuth-2.0 as-service-principal)
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
-* [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
-* [Create Service Principal](#create-service-principal)
-* [Authentication](#authentication)
-* [Set Permissions](#set-permissions)
+
+
 * [Environment Variables](#environment-variables)
 * [Deploy to Cluster](#deploy-to-cluster)
 * [Pipeline Execution](#pipeline-execution)
@@ -58,6 +58,33 @@ http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt
 
 ### Pipeline Deployment Architecture
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
+
+
+
+
+### Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal
+https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
+
+Secret Scopes
+https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
+
+**Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**
+Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
+* The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.
+
+If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
+
+https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/
+
+
+
+
+
+
+
+
+
+
 
 
 ### Azure Dashboard
@@ -268,3 +295,17 @@ Sherrod Brown,78;Child Suicide Prevention,132;Lethal Means Safety,156;Democratic
  
 ```
 </details>
+
+
+
+
+
+
+
+
+
+
+
+* [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
+* [Create Service Principal](#create-service-principal)
+* [Authentication](#authentication)
