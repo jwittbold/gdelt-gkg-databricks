@@ -204,6 +204,66 @@ root
 
 ## Development Set-up :hammer_and_wrench:
 
+
+### Setting Up Databricks Connect
+
+Follow the official documentation to get set up.  
+https://docs.databricks.com/dev-tools/databricks-connect.html
+
+- Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). 
+- As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Pythonn and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
+> The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
+
+
+| Databricks Runtime version | Python version |
+|----------------------------|----------------|
+| 9.1 LTS ML, 9.1 LTS        | 3.8            |
+| 7.3 LTS ML, 7.3 LTS        | 3.7            |
+| 6.4 ML, 6.4                | 3.7            |
+
+First,  set up your conda environment:  
+https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
+
+```
+conda create --name dbconnect38 python=3.8
+```
+```
+conda activate dbconnect38
+```
+```
+pip install -U databricks-connect 
+```
+
+
+- Databricks Connect also requires you to have Java 8 installed. If you have multiple Java versions, you can manage them via your ```~/.bash_profile``` or ```~/.zshrc``` profile. 
+ 
+- If you're on OS X and use Homebrew you can brew install Java 8  
+        https://devqa.io/brew-install-java/
+```
+brew cask install adoptopenjdk8
+```
+
+- make sure $JAVA_HOME and $JRE_HOME are pointing towards the Java 8 version.  
+
+Ex:  
+```
+export JAVA_HOME=/usr/local/Cellar/openjdk@8/1.8.0+282
+export PATH=$JAVA_HOME/bin:$PATH
+export JRE_HOME=$JAVA_HOME/jre
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+```
+
+
+- If you've already previously set a SPARK_HOME environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
+
+Ex:
+```
+export SPARK_HOME=/Users/<user_name>/opt/anaconda3/envs/dbconnect38/lib/python3.8/site-packages/pyspark
+```
+
+
+
+
 ### Access ADLS Gen2 Using OAuth 2 as Service Principal
 
 https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
