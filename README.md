@@ -14,7 +14,7 @@
 * [Transforming GKG Files](#transforming-gkg-files)
 
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
-* [Access Azure Data Lake Storage Gen2 Using OAuth 2.0 as Service Principal](#Access-Azure-Data-Lake-Storage-Gen2-Using-OAuth-2.0-as-Service-Principal)
+* [Access Azure Data Lake Storage Gen2 Using OAuth 2.0 as Service Principal](#access-azure-data-lake-storage-gen2-using-OAuth-2.0-as-service-principal)
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
 
 
