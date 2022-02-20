@@ -3,13 +3,13 @@
 
 ![language](https://img.shields.io/badge/language-python-blue.svg) ![language](https://img.shields.io/badge/language-bash-green.svg)
 
+
 ## Running on Databricks and Azure ADLS Gen 2 Storage via Databricks Connect
 
 ## Table of Contents
 * [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
 * [Understanding GDELT GKG](#understanding-gdelt-gkg)
 * [GKG Schema](#gkg-schema)
-* [GKG Data Model](#gkg-data-model)
 
 
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
@@ -51,11 +51,11 @@
 
 **GKG 2.0 File Sources**  
 
-- Master GKG File List  
+- Master GKG file list containing all GKG file URLs going back to 2015  
         http://data.gdeltproject.org/gdeltv2/masterfilelist.txt  
         http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt  
         
-- Latest GKG File List  
+- Latest GKG file list containing file URLs updated every 15 minutes  
         http://data.gdeltproject.org/gdeltv2/lastupdate.txt  
         http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt  
 
@@ -197,10 +197,6 @@ root
  |    |-- AltUrlAmp: string (nullable = true)
  |    |-- PubTimestamp: timestamp (nullable = true)
  ```
-
-
-## GKG Data Model
-![gkg_data_model](/erd/GKG_ERD.svg)
 
 
 
