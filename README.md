@@ -14,7 +14,7 @@
 * [Transforming GKG Files](#transforming-gkg-files)
 
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
-
+* [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
 
 
 
@@ -63,7 +63,7 @@ http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
 
 
-
+### Access ADLS Gen2 Using OAuth 2 as Service Principal
 
 https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
 
