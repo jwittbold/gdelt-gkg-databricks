@@ -14,7 +14,7 @@
 * [Transforming GKG Files](#transforming-gkg-files)
 
 * [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
-* [Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal](#access-azure-data-lake-storage-gen2-using-OAuth-2.0 as-service-principal)
+* [Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal](#access-azure-data-lake-storage-gen2-using-OAuth-2.0-as-service-principal)
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
 
 
@@ -62,13 +62,13 @@ http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt
 
 
 
-### Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal
+### Access Azure Data Lake Storage Gen2 using OAuth 2.0 as Service Principal  
 https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
 
-Secret Scopes
+Secret Scopes  
 https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
 
-**Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**
+**Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
 Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
 * The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.
 
