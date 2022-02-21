@@ -13,8 +13,9 @@
 
 
 * [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)
-* [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
+* [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
+
 
 * [Ingesting GKG Files](#ingesting-gkg-files)
 
@@ -33,6 +34,7 @@
 ### Pipeline Deployment Architecture
 ![deployment_architecture](/diagrams/gkg_pipeline_deployment_architecture_sm.png)
 
+---
 
 ## Understanding GDELT GKG
 
@@ -59,6 +61,7 @@
         http://data.gdeltproject.org/gdeltv2/lastupdate.txt  
         http://data.gdeltproject.org/gdeltv2/lastupdate-translation.txt  
 
+---
 
 ## GKG Schema
 ```
@@ -200,9 +203,9 @@ root
 
 
 
+---
 
-
-## Development Set-up :hammer_and_wrench:
+## Project Set-up :hammer_and_wrench:
 
 ### Setting Up a Databricks Cluster
 
