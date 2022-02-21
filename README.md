@@ -261,7 +261,9 @@ Ex:
 export SPARK_HOME=/Users/<user_name>/opt/anaconda3/envs/dbconnect38/lib/python3.8/site-packages/pyspark
 ```
 
+Once you have the environment set you can continue to configure Databricks Connect by running the configuration command and supplying your cluster information and personal access token.
 
+---
 
 
 ### Access ADLS Gen2 Using OAuth 2 as Service Principal
