@@ -9,7 +9,7 @@
 ## Table of Contents
 * [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
 - [Understanding GDELT GKG](#understanding-gdelt-gkg)
-* [GKG Schema](#gkg-schema)
+* [Normalized GKG Schema](#gkg-schema)
 
 - [Set Up Project Environment](Project-set-up)  
     - [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)  
