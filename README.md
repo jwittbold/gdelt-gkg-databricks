@@ -267,7 +267,7 @@ The credentials you enter will be saved to a hidden file called ```.databricks-c
 If need be you can access and edit the file by opening a new finder window and navigating to the file directly:  
 <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>G</kbd> and enter ```~/.databricks-connect```.  
         
-Alternatively you can just navigate to your home folder and enter <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>.</kbd> to see all hidden files.
+Alternatively you can simply navigate to your home folder and enter <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>.</kbd> to see all hidden files.
 
 
 ---
