@@ -254,7 +254,7 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ```
 
 
-- If you've already previously set a SPARK_HOME environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
+- If you've previously set a SPARK_HOME environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
 
 Ex:
 ```
