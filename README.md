@@ -8,13 +8,15 @@
 
 ## Table of Contents
 * [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
-* [Understanding GDELT GKG](#understanding-gdelt-gkg)
+- [Understanding GDELT GKG](#understanding-gdelt-gkg)
 * [GKG Schema](#gkg-schema)
 
+- [Set Up Project Environment](Project-set-up)  
+    - [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)  
+    - [Setting Up Databricks Connect](#setting-up-databricks-connect)  
+    - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
 
-* [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)
-* [Setting Up Databricks Connect](#setting-up-databricks-connect)
-* [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
+
 
 
 * [Ingesting GKG Files](#ingesting-gkg-files)
@@ -378,12 +380,3 @@ Sherrod Brown,78;Child Suicide Prevention,132;Lethal Means Safety,156;Democratic
 
 
 
-
-
-
-
-
-
-* [Setting Up Azure ADLS Gen2 Storage](#setting-up-azure-adls-gen2-storage)
-* [Create Service Principal](#create-service-principal)
-* [Authentication](#authentication)
