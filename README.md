@@ -208,9 +208,9 @@ root
 ### Setting Up Databricks Connect
 
 Follow the official documentation to get set up.  
-https://docs.databricks.com/dev-tools/databricks-connect.html
+[Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html)
 
-- Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will stil need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
+- Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
 - As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Pythonn and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
 > The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
 
@@ -222,7 +222,7 @@ https://docs.databricks.com/dev-tools/databricks-connect.html
 | 6.4 ML, 6.4                | 3.7            |
 
 First,  set up your conda environment:  
-https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
+[Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ```
 conda create --name dbconnect38 python=3.8
@@ -238,7 +238,7 @@ pip install -U databricks-connect
 - Databricks Connect also requires you to have Java 8 installed. If you have multiple Java versions, you can manage them via your ```~/.bash_profile``` or ```~/.zshrc``` profile. 
  
 - If you're on OS X and use Homebrew you can brew install Java 8  
-        https://devqa.io/brew-install-java/
+        [Brew Install Java Tutorial](https://devqa.io/brew-install-java/)
 ```
 brew cask install adoptopenjdk8
 ```
@@ -261,7 +261,7 @@ Ex:
 export SPARK_HOME=/Users/<user_name>/opt/anaconda3/envs/dbconnect38/lib/python3.8/site-packages/pyspark
 ```
 
-Once you have the environment set you can continue to configure Databricks Connect by running the configuration command and supplying your cluster information and personal access token.
+Once you have the environment set you can continue to configure Databricks Connect by running the configuration command as explained in the [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html) and supplying your cluster information and personal access token.
 
 The credentials you enter will be saved to a hidden file called ```.databricks-connect```, located in your home folder.  
 If need be you can access and edit the file by opening a new finder window and navigating to the file directly:  
@@ -275,18 +275,18 @@ Alternatively you can simply navigate to your home folder and enter <kbd>Shift</
 
 ### Access ADLS Gen2 Using OAuth 2 as Service Principal
 
-https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access
+[Microsoft ADLS Gen2 Service Principal Documentation](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access)
 
 
 Secret Scopes  
-https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
+[Azure Databricks Secret Scopes Documentation](https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
 
 **Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
 - Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
 > The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.  
 
 - If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
-        https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/ 
+        [Avoid 403 Errors Accessing ADLS Gen2 As Service Principal](https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/) 
 
 
 
