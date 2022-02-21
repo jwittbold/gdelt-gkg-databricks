@@ -12,7 +12,7 @@
 * [GKG Schema](#gkg-schema)
 
 
-* [Setting Up Databricks Cluster](#setting-up-databricks-cluster)
+* [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)
 * [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)
 * [Setting Up Databricks Connect](#setting-up-databricks-connect)
 
@@ -204,6 +204,7 @@ root
 
 ## Development Set-up :hammer_and_wrench:
 
+### Setting Up a Databricks Cluster
 
 ### Setting Up Databricks Connect
 
@@ -254,7 +255,7 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ```
 
 
-- If you've previously set a SPARK_HOME environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
+- If you've previously set a ```SPARK_HOME``` environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
 
 Ex:
 ```
