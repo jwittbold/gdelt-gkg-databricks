@@ -216,14 +216,16 @@ Follow the official documentation to get set up.
 
 - Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
 - As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Python and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
-> The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
-
 
 | Databricks Runtime version | Python version |
 |----------------------------|----------------|
 | 9.1 LTS ML, 9.1 LTS        | 3.8            |
 | 7.3 LTS ML, 7.3 LTS        | 3.7            |
 | 6.4 ML, 6.4                | 3.7            |
+
+> The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
+
+
 
 First,  set up your conda environment:  
 [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
