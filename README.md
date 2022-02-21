@@ -263,6 +263,13 @@ export SPARK_HOME=/Users/<user_name>/opt/anaconda3/envs/dbconnect38/lib/python3.
 
 Once you have the environment set you can continue to configure Databricks Connect by running the configuration command and supplying your cluster information and personal access token.
 
+The credentials you enter will be saved to a hidden file called ```.databricks-connect```, located in your home folder.  
+If need be you can access and edit the file by opening a new finder window and navigating to the file directly:  
+<kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>G</kbd> and enter ```~/.databricks-connect```.  
+        
+Alternatively you can just navigate to your home folder and enter <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>.</kbd> to see all hidden files.
+
+
 ---
 
 
