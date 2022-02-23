@@ -366,9 +366,19 @@ spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_acc_name>.dfs.core.w
 
 ### Provide Init Script
 
-### Install Libraries
-gdelt_gkg-1.0.0-py3-none-any.whl
-cloudpathlib-0.7.0-py3-none-any.whl
+In Azure Storage Explorer navigate to the scripts folder located at the root of the container and add the ```install_requirements.sh``` script.  
+This will install all of the required Python packages on all nodes within your cluster.
+
+
+DBFS file path:  
+```
+dbfs:/scripts/install_requirements.sh  
+```
+
+### Install Libraries  
+
+gdelt_gkg-1.0.0-py3-none-any.whl  
+cloudpathlib-0.7.0-py3-none-any.whl   
 
 
 ### Azure Dashboard
