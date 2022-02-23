@@ -17,17 +17,16 @@
 - [Normalized GKG Schema](#normalized-gkg-schema)
 
 - [Set Up Project Environment](#set-up-project-environment)  
-    - [Provision a Databricks Cluster](#provision-a-databricks-cluster)
+    - [Create a Databricks Cluster](#create-a-databricks-cluster)
     - [Create Conda Environment](#create-conda-environment)
     - [Install Java 8](#install-java-8)
-  
     - [Setting Up Databricks Connect](#setting-up-databricks-connect)  
     - [Create Directories in Azure Storage Explorer](#create-directories-in-azure-storage-explorer)
     - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
-    - [Requirements and Config Files](#requirements-and-config-files)
 
-- [Running Pipeline](#running-pipeline)
+- [Configuring the Pipeline](#configuring-the-pipeline)
     - [Mount ADLS Gen2 Storage to Databricks Using Secret Scope](#mount-adls-gen2-storage-to-databricks-using-secret-scope)
+    - [Provision the Cluster](#provision-the-cluster)
     - [Additional Spark and Hadoop Configs](#additional-spark-and-hadoop-configs)
     - [Provide Init Script](#provide-init-script)
     - [Install Libraries](#install-libraries)
@@ -228,7 +227,11 @@ root
 # Project Set-up :hammer_and_wrench:
 
 
-## Provision a Databricks Cluster
+## Create a Databricks Cluster
+
+![configure_cluster](screenshots/provision_cluster/1_configure_cluster.png)
+
+
 ---
 
 ## Set Up Project Environment 
@@ -380,10 +383,15 @@ To unmount your storage account:
 dbutils.fs.unmount('dbfs:/mnt/')
 ```
 
+# Configuring the Pipeline
+
+## Provision the Cluster
 
 
-## Additional Spark and Hadoop Configs
 
+### Additional Spark and Hadoop Configs
+ 
+- Under the Advanced section of your cluster, edit settings to supply additional Spark and Hadoop configs: 
 ```
 spark.sql.session.timeZone Hongkong
 spark.databricks.passthrough.enabled true
@@ -399,21 +407,35 @@ spark.hadoop.fs.azure.account.oauth.provider.type.<storage_acc_name>.dfs.core.wi
 spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_acc_name>.dfs.core.windows.net <app_client_secret>
 ```
 
+![spark_hadoop_configs](screenshots/provision_cluster/2_spark_hadoop_configs.png)
+- Note that the ```DATABRICKS_AAD_TOKEN```, ```AZURE_STORAGE_CONNECTION_STRING``` and ```AZURE_STORAGE_ACCESS_KEY``` environment variables as seen in the picture are not currently needed and can be disregarded. 
+
 ### Provide Init Script
-
-In Azure Storage Explorer navigate to the scripts folder located at the root of the container and add the ```install_requirements.sh``` script.  
-This will install all of the required Python packages on all nodes within your cluster.
-
+- Supply the path to the init script   
+In Azure Storage Explorer navigate to the scripts folder located at the root of the container and add the ```install_requirements.sh``` script. This will install all of the required Python packages on all nodes within your cluster.
 
 DBFS file path:  
 ```
 dbfs:/scripts/install_requirements.sh  
 ```
+![provide_init_script](screenshots/provision_cluster/3_provide_init_script.png)
+
 
 ### Install Libraries  
+Two libraries are needed to run the pipeline. Both are contained within the ```gdelt-gkg/dist``` folder of the repository.  
+The first is the gdelt-gkg app containing all of the python modules: ```gdelt_gkg-1.0.0-py3-none-any.whl```  
+The second is the cloudpathlib library. PyPi pip installs of cloudpathlib were not working so I downloaded the source code and ran a build. I have included the .whl file ```cloudpathlib-0.7.0-py3-none-any.whl``` within the ```gdelt-gkg/dist``` folder.
 
-gdelt_gkg-1.0.0-py3-none-any.whl  
-cloudpathlib-0.7.0-py3-none-any.whl   
+- ```gdelt_gkg-1.0.0-py3-none-any.whl```
+- ```cloudpathlib-0.7.0-py3-none-any.whl```   
+
+
+![install_libraries](screenshots/provision_cluster/4_install_libraries.png)
+
+
+
+The two installed libraries:
+![installed_libraries](screenshots/provision_cluster/5_installed_libraries.png)
 
 
 ### Azure Dashboard
