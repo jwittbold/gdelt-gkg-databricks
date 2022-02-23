@@ -232,7 +232,7 @@ root
 
 ## Setting Up Databricks Connect
 
-Follow the official documentation to get set up.  
+Follow the official documentation to get get going, [but first set up a conda env](#first-set-up-your-conda-environment)   
 [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html)
 
 - Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
@@ -248,7 +248,8 @@ Follow the official documentation to get set up.
 
 
 
-First, set up your conda environment:  
+### First Set Up Your Conda Environment
+
 [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ```
