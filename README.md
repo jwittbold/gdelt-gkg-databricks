@@ -303,7 +303,7 @@ Using Azure Storage Explorer you can create the needed folders for running the p
 You will manually add the ```config.toml``` file to the config directory as well as the ```install_requirements.sh``` script to the scripts directory.  
 
 
-The final directory stucture including needed files should appear as follows (with ```.``` as the root of your storage container):
+The final directory stucture including needed files should appear as follows (with ```.``` as the root of your blob container):
 
 ```
 .
