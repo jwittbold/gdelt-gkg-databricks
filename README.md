@@ -226,9 +226,10 @@ root
 ## Set Up Project Environment 
 
 
-### Setting Up a Databricks Cluster
+## Setting Up a Databricks Cluster
+---
 
-### Setting Up Databricks Connect
+## Setting Up Databricks Connect
 
 Follow the official documentation to get set up.  
 [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html)
@@ -298,7 +299,7 @@ Alternatively you can simply navigate to your home folder and enter <kbd>Shift</
 ---
 
 
-### Access ADLS Gen2 Using OAuth 2 as Service Principal
+## Access ADLS Gen2 Using OAuth 2 as Service Principal
 
 [Microsoft ADLS Gen2 Service Principal Documentation](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access)
 
@@ -309,6 +310,7 @@ Alternatively you can simply navigate to your home folder and enter <kbd>Shift</
 
 - If you're encountering 403 or 'Invalid CSFR Token' errors, this blog post is helpful in further describing the steps to authenticate as a service principal and set permissions on folders using Azure Storage Explorer.  
         [Avoid 403 Errors Accessing ADLS Gen2 As Service Principal](https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/) 
+---
 
 
 ## Mount ADLS Gen2 Storage to Databricks Using Secret Scope 
