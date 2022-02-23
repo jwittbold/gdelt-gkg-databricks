@@ -27,8 +27,7 @@
     - [Mount ADLS Gen2 Storage to Databricks Using Secret Scope](#mount-adls-gen2-storage-to-databricks-using-secret-scope)
     - [Additional Spark and Hadoop Configs](#additional-spark-and-hadoop-configs)
     - [Provide Init Script](#provide-init-script)
-    - [Deploy to Databricks Cluster](#deploy-to-databricks-cluster)
-    - [Install Additional Libraries](#install-additional-libraries)
+    - [Install Libraries](#install-libraries)
 
  
  
@@ -366,6 +365,11 @@ spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_acc_name>.dfs.core.w
 ```
 
 ### Provide Init Script
+
+### Install Libraries
+gdelt_gkg-1.0.0-py3-none-any.whl
+cloudpathlib-0.7.0-py3-none-any.whl
+
 
 ### Azure Dashboard
 ![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
