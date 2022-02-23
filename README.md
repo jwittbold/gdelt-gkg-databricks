@@ -17,7 +17,7 @@
 - [Normalized GKG Schema](#normalized-gkg-schema)
 
 - [Set Up Project Environment](#set-up-project-environment)  
-    - [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)  
+    - [Provision a Databricks Cluster](#provision-a-databricks-cluster)  
     - [Setting Up Databricks Connect](#setting-up-databricks-connect)  
     - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
     - [Create Directories in Azure Storage Explorer](#create-directories-in-azure-storage-explorer)
@@ -227,7 +227,7 @@ root
 ## Set Up Project Environment 
 
 
-## Setting Up a Databricks Cluster
+## Provision a Databricks Cluster
 ---
 
 ## Setting Up Databricks Connect
