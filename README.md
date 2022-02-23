@@ -1,7 +1,7 @@
 # GDELT Global Knowlegde Graph Pipeline
 ***Global Database of Events, Language, and Tone***
 
-![language](https://img.shields.io/badge/language-python-blue.svg) ![language](https://img.shields.io/badge/language-bash-green.svg)
+![language](https://img.shields.io/badge/language-python-blue.svg) ![language](https://img.shields.io/badge/language-shell-green.svg)
 
 
 ## Running on Databricks and Azure ADLS Gen 2 Storage via Databricks Connect
