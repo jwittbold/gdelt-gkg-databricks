@@ -17,10 +17,13 @@
 - [Normalized GKG Schema](#normalized-gkg-schema)
 
 - [Set Up Project Environment](#set-up-project-environment)  
-    - [Provision a Databricks Cluster](#provision-a-databricks-cluster)  
+    - [Provision a Databricks Cluster](#provision-a-databricks-cluster)
+    - [Create Conda Environment](#create-conda-environment)
+    - [Install Java 8](#install-java-8)
+  
     - [Setting Up Databricks Connect](#setting-up-databricks-connect)  
-    - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
     - [Create Directories in Azure Storage Explorer](#create-directories-in-azure-storage-explorer)
+    - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
     - [Requirements and Config Files](#requirements-and-config-files)
 
 - [Running Pipeline](#running-pipeline)
@@ -224,31 +227,12 @@ root
 
 # Project Set-up :hammer_and_wrench:
 
-## Set Up Project Environment 
-
 
 ## Provision a Databricks Cluster
 ---
 
-## Setting Up Databricks Connect
-
-Follow the official [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html) to get get going, [but first set up a conda env](#first-set-up-your-conda-environment)   
-
-
-- Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
-- As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Python and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
-
-| Databricks Runtime version | Python version |
-|----------------------------|----------------|
-| 9.1 LTS ML, 9.1 LTS        | 3.8            |
-| 7.3 LTS ML, 7.3 LTS        | 3.7            |
-| 6.4 ML, 6.4                | 3.7            |
-
-> The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
-
-
-
-### First Set Up Your Conda Environment
+## Set Up Project Environment 
+### Create Conda Environment
 
 [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
@@ -261,6 +245,7 @@ conda activate dbconnect38
 ```
 pip install -U databricks-connect 
 ```
+
 
 ### Install Java 8
 
@@ -281,6 +266,29 @@ export PATH=$JAVA_HOME/bin:$PATH
 export JRE_HOME=$JAVA_HOME/jre
 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ```
+
+
+---
+
+## Setting Up Databricks Connect
+
+Follow the official [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html) to get get going, [but first set up a conda env](#create-conda-environment) and [install Java 8](#install-java-8)
+
+
+- Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
+- As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Python and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
+
+| Databricks Runtime version | Python version |
+|----------------------------|----------------|
+| 9.1 LTS ML, 9.1 LTS        | 3.8            |
+| 7.3 LTS ML, 7.3 LTS        | 3.7            |
+| 6.4 ML, 6.4                | 3.7            |
+
+> The minor version of your client Python installation must be the same as the minor Python version of your Databricks cluster. The table shows the Python version installed with each Databricks Runtime.
+
+
+
+
 
 
 - If you've previously set a ```SPARK_HOME``` environment variable, you will need to comment it out and create a new one that points to Pyspark contained within the Databricks Connect environment you just created.  
