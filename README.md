@@ -14,7 +14,7 @@
     - [Inspecting a GDELT GKG Row](#inspecting-a-gdelt-gkg-row)
 
 
-- [Normalized GKG Schema](#gkg-schema)
+- [Normalized GKG Schema](#normalized-gkg-schema)
 
 - [Set Up Project Environment](#set-up-project-environment)  
     - [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)  
@@ -25,9 +25,11 @@
 
 - [Running Pipeline](#running-pipeline)
     - [Mount ADLS Gen2 Storage to Databricks Using Secret Scope](#mount-adls-gen2-storage-to-databricks-using-secret-scope)
+    - [Additional Spark and Hadoop Configs](#additional-spark-and-hadoop-configs)
+    - [Provide Init Script](#provide-init-script)
     - [Deploy to Databricks Cluster](#deploy-to-databricks-cluster)
     - [Install Additional Libraries](#install-additional-libraries)
-    - [Additional Spark and Hadoop Configs](#additional-spark-and-hadoop-configs)
+
  
  
 - [Under the Hood](#under-the-hood)  
@@ -78,7 +80,7 @@
 
 ---
 
-## GKG Schema
+## Normalized GKG Schema
 ```
 root
  |-- GkgRecordId: struct (nullable = true)
@@ -363,7 +365,7 @@ spark.hadoop.fs.azure.account.oauth.provider.type.<storage_acc_name>.dfs.core.wi
 spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_acc_name>.dfs.core.windows.net <app_client_secret>
 ```
 
-
+### Provide Init Script
 
 ### Azure Dashboard
 ![gdelt_pipeline_dashboard](/screenshots/gdelt_pipeline_dashboard.png)
