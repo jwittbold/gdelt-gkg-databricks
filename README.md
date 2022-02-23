@@ -232,8 +232,8 @@ root
 
 ## Setting Up Databricks Connect
 
-Follow the official documentation to get get going, [but first set up a conda env](#first-set-up-your-conda-environment)   
-[Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html)
+Follow the official [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html) to get get going, [but first set up a conda env](#first-set-up-your-conda-environment)   
+
 
 - Databricks Connect allows you to connect your IDE to a Databricks cluster and run your code from your local environment (rather than through a Notebook). However, you will still need to connect to and mount your storage using a Notebook, after which code can be executed from your IDE.
 - As of time of writing, the latest supported Databricks Runtime version is Databricks is 9.1 LTS ML, 9.1 LTS and it requires Python 3.8 to run. If you already have Python and Spark installed, you can simply create a new conda or venv environment built on Python 3.8, activate it, and then pip install Databricks Connect.
@@ -292,7 +292,7 @@ export SPARK_HOME=/Users/<user_name>/opt/anaconda3/envs/dbconnect38/lib/python3.
 Once you have the environment set you can continue to configure Databricks Connect by running the configuration command as explained in the [Databricks Connect Documentation](https://docs.databricks.com/dev-tools/databricks-connect.html) and supplying your cluster information and personal access token.
 
 The credentials you enter will be saved to a hidden file called ```.databricks-connect```, located in your home folder.  
-If need be you can access and edit the file by opening a new finder window and navigating to the file directly:  
+If needed you can access and edit the file by opening a new finder window and navigating to the file directly:  
 <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>G</kbd> and enter ```~/.databricks-connect```.  
         
 Alternatively you can simply navigate to your home folder and enter <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>.</kbd> to see all hidden files.
