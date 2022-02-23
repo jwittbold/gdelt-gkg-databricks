@@ -24,9 +24,10 @@
     - [Requirements and Config Files](#requirements-and-config-files)
 
 - [Running Pipeline](#running-pipeline)
+    - [Mount ADLS Gen2 Storage to Databricks Using Secret Scope](#mount-adls-gen2-storage-to-databricks-using-secret-scope)
     - [Deploy to Databricks Cluster](#deploy-to-databricks-cluster)
     - [Install Additional Libraries](#install-additional-libraries)
-    - [Additional Spark Configs](#additional-spark-configs)
+    - [Additional Spark and Hadoop Configs](#additional-spark-and-hadoop-configs)
  
  
 - [Under the Hood](#under-the-hood)  
@@ -302,9 +303,6 @@ Alternatively you can simply navigate to your home folder and enter <kbd>Shift</
 [Microsoft ADLS Gen2 Service Principal Documentation](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access)
 
 
-Secret Scopes  
-[Azure Databricks Secret Scopes Documentation](https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
-
 **Note that you must set permissions to allow your service principal app to access ADLS Gen2 Storage**  
 - Check the 'default' box to propogate access down to all folders and files contained within (before they are added to the directory)
 > The default ACL determines permissions for new children of this directory. Changing the default ACL does not affect children that already exist.  
@@ -313,9 +311,55 @@ Secret Scopes
         [Avoid 403 Errors Accessing ADLS Gen2 As Service Principal](https://deep.data.blog/2019/03/28/avoiding-error-403-request-not-authorized-when-accessing-adls-gen-2-from-azure-databricks-while-using-a-service-principal/) 
 
 
+## Mount ADLS Gen2 Storage to Databricks Using Secret Scope 
+
+[Access Azure Data Lake Storage Gen2 using OAuth 2.0 with an Azure service principal](https://docs.databricks.com/data/data-sources/azure/adls-gen2/azure-datalake-gen2-sp-access.html)  
+
+[Mounting & Accessing ADLS Gen2 in Azure Databricks Using Service Principal and Secret Scopes](https://towardsdatascience.com/mounting-accessing-adls-gen2-in-azure-databricks-using-service-principal-and-secret-scopes-96e5c3d6008b)
+
+Secret Scopes  
+[Azure Databricks Secret Scopes Documentation](https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
+
+Within cell of Databricks Notebook:
+
+```python
+configs = {"fs.azure.account.auth.type": "OAuth",
+       "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+       "fs.azure.account.oauth2.client.id": "<application_ID>",
+       "fs.azure.account.oauth2.client.secret": dbutils.secrets.get(scope="gdelt-pipeline-secret-scope", key="gdelt-databricks-SECRET"),
+       "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant_ID>/oauth2/token",
+       "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
+
+dbutils.fs.mount(
+source = "abfss://<container_name>@<storage_acc_name>.dfs.core.windows.net",
+mount_point = "/mnt/",
+extra_configs = configs)
+
+```
+
+To unmount your storage account:
+```python
+dbutils.fs.unmount('dbfs:/mnt/')
+```
 
 
 
+## Additional Spark and Hadoop Configs
+
+```
+spark.sql.session.timeZone Hongkong
+spark.databricks.passthrough.enabled true
+spark.databricks.delta.preview.enabled true
+spark.databricks.service.server.enabled true
+spark.databricks.pyspark.enableProcessIsolation false
+
+spark.hadoop.fs.azure.account.oauth2.client.endpoint.<storage_acc_name>.dfs.core.windows.net https://login.microsoftonline.com/<tenant_ID>/oauth2/token
+spark.hadoop.fs.azure.account.oauth2.client.id.gdeltstorage.dfs.core.windows.net <application_ID>
+spark.hadoop.fs.azure.account.key.<storage_acc_name>.dfs.core.windows.net <AZURE_STORAGE_ACCESS_KEY>
+spark.hadoop.fs.azure.account.auth.type.<storage_acc_name>.dfs.core.windows.net OAuth
+spark.hadoop.fs.azure.account.oauth.provider.type.<storage_acc_name>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
+spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_acc_name>.dfs.core.windows.net <app_client_secret>
+```
 
 
 
