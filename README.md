@@ -7,30 +7,41 @@
 ## Running on Databricks and Azure ADLS Gen 2 Storage via Databricks Connect
 
 ## Table of Contents
-* [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
+- [Pipeline Deployment Architecture](#pipeline-deployment-architecture)
 - [Understanding GDELT GKG](#understanding-gdelt-gkg)
-* [Normalized GKG Schema](#gkg-schema)
+    - [GDELT Datasets](#gdelt-datasets)
+    - [GKG 2.0 Source Files](#gkg-2-source-files)
+    - [Inspecting a GDELT GKG Row](#inspecting-a-gdelt-gkg-row)
 
-- [Set Up Project Environment](Project-set-up)  
+
+- [Normalized GKG Schema](#gkg-schema)
+
+- [Set Up Project Environment](#set-up-project-environment)  
     - [Setting Up a Databricks Cluster](#setting-up-a-databricks-cluster)  
     - [Setting Up Databricks Connect](#setting-up-databricks-connect)  
     - [Access ADLS Gen2 Using OAuth 2.0 as Service Principal](#access-adls-gen2-using-oauth-2-as-service-principal)  
+    - [Create Directories in Azure Storage Explorer](#create-directories-in-azure-storage-explorer)
+    - [Requirements and Config Files](#requirements-and-config-files)
+
+- [Running Pipeline](#running-pipeline)
+    - [Deploy to Databricks Cluster](#deploy-to-databricks-cluster)
+    - [Install Additional Libraries](#install-additional-libraries)
+    - [Additional Spark Configs](#additional-spark-configs)
+ 
+ 
+- [Under the Hood](#under-the-hood)  
+    - [Ingesting GKG Files](#ingesting-gkg-files)
+    - [Transforming GKG Files](#transforming-gkg-files)
+    
+- [Monitoring Pipeline](#azure-dashboard)
+
+- [Working With GKG Data](#working-with-gkg-data)
+    - [Potential Use Cases and Applications](#potential-use-cases-and-applications)
+    - [Querying Transformed Data](#querying-transformed-data)
+    
 
 
-
-
-* [Ingesting GKG Files](#ingesting-gkg-files)
-
-* [Transforming GKG Files](#transforming-gkg-files)
-
-
-* [Environment Variables](#environment-variables)
-* [Deploy to Cluster](#deploy-to-cluster)
-* [Pipeline Execution](#pipeline-execution)
-* [Monitoring Pipeline](#azure-dashboard)
-* [Querying Transformed Data](#querying-transformed-data)
-* [Potential Use Cases and Applications](#potential-use-cases-and-applications)
-* [GDELT GKG Local Pipeline](#gdelt-gkg-local-pipeline)
+- [GDELT GKG Pipeline Local Version](#gdelt-gkg-pipeline-local-version)
 
 
 ### Pipeline Deployment Architecture
@@ -40,6 +51,7 @@
 
 ## Understanding GDELT GKG
 
+### GDELT Datasets 
 - High level overview of the GDELT Project   
         https://www.gdeltproject.org  
 
@@ -53,7 +65,7 @@
         https://blog.gdeltproject.org/introducing-the-global-content-analysis-measures-gcam/  
 
 
-**GKG 2.0 File Sources**  
+### GKG 2 Source Files
 
 - Master GKG file list containing all GKG file URLs going back to 2015  
         http://data.gdeltproject.org/gdeltv2/masterfilelist.txt  
@@ -207,7 +219,11 @@ root
 
 ---
 
-## Project Set-up :hammer_and_wrench:
+
+# Project Set-up :hammer_and_wrench:
+
+## Set Up Project Environment 
+
 
 ### Setting Up a Databricks Cluster
 
@@ -229,7 +245,7 @@ Follow the official documentation to get set up.
 
 
 
-First,  set up your conda environment:  
+First, set up your conda environment:  
 [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ```
@@ -315,7 +331,8 @@ Secret Scopes
 ```
 
 
-## One randonly selected row in a raw GKG file broken down to its 27 native columns. 
+## Inspecting a GDELT GKG Row
+### One randonly selected row in a raw GKG file broken down to its 27 native columns. 
 Highlighting the denormalized structure of the data. Before transformation each CSV file contains 27 columns, many of which contain further nested data elements which are delimited differently depending on the column.
 
 <details>
