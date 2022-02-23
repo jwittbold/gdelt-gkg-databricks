@@ -262,6 +262,7 @@ conda activate dbconnect38
 pip install -U databricks-connect 
 ```
 
+### Install Java 8
 
 - Databricks Connect also requires you to have Java 8 installed. If you have multiple Java versions, you can manage them via your ```~/.bash_profile``` or ```~/.zshrc``` profile. 
  
