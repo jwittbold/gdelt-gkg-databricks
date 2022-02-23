@@ -348,6 +348,8 @@ Secret Scopes
 
 
 ```python
+# within Databricks Notebook
+
 configs = {"fs.azure.account.auth.type": "OAuth",
        "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
        "fs.azure.account.oauth2.client.id": "<application_ID>",
@@ -364,6 +366,8 @@ extra_configs = configs)
 
 To unmount your storage account:
 ```python
+# within Databricks Notebook
+
 dbutils.fs.unmount('dbfs:/mnt/')
 ```
 
