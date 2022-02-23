@@ -346,7 +346,6 @@ The final directory stucture including needed files should appear as follows (wi
 Secret Scopes  
 [Azure Databricks Secret Scopes Documentation](https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
 
-Within cell of Databricks Notebook:
 
 ```python
 configs = {"fs.azure.account.auth.type": "OAuth",
