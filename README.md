@@ -297,6 +297,28 @@ If need be you can access and edit the file by opening a new finder window and n
 Alternatively you can simply navigate to your home folder and enter <kbd>Shift</kbd>+<kbd>Cmnd</kbd>+<kbd>.</kbd> to see all hidden files.
 
 
+## Create Directories in Azure Storage Explorer
+
+Using Azure Storage Explorer you can create the needed folders for running the pipeline.  
+You will manually add the ```config.toml``` file to the config directory as well as the ```install_requirements.sh``` script to the scripts directory.  
+
+
+The final directory stucture including needed files should appear as follows (with ```.``` as the root of your storage container):
+
+```
+.
+├── config
+│   └── config.toml
+├── gdelt
+│   ├── download_metrics
+│   ├── pipeline_metrics_final
+│   ├── pipeline_metrics_temp
+│   ├── raw_gkg
+│   └── transformed_gkg
+└── scripts
+    └── install_requirements.sh
+```
+
 ---
 
 
