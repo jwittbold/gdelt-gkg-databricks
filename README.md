@@ -16,7 +16,7 @@
 
 - [Normalized GKG Schema](#normalized-gkg-schema)
 
-- [Set Up Project Environment](#set-up-project-environment)  
+- [Set Up Project Environment](#hammer_and_wrench-set-up-project-environment)
     - [Create a Databricks Cluster](#create-a-databricks-cluster)
     - [Create Conda Environment](#create-conda-environment)
     - [Install Java 8](#install-java-8)
@@ -223,8 +223,7 @@ root
 
 ---
 
-
-# Project Set-up :hammer_and_wrench:
+# :hammer_and_wrench: Set Up Project Environment
 
 
 ## Create a Databricks Cluster
